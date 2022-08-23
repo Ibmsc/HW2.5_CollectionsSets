@@ -3,16 +3,13 @@ package HW2._CollectionsSets.HW2._CollectionsSets;
 public class Employee {
 
     private String name;
-    private int departmentNumber;
-    private int id;
-    private static int counter;
+    private String surname;
 
-    public Employee(String name, int departmentNumber, int id) {
+
+    public Employee(String name, String surname) {
         this.name = name;
-        this.departmentNumber = departmentNumber;
-        this.id = ++counter;
+        this.surname = surname;
     }
-
 
     public String getName() {
         return name;
@@ -22,27 +19,11 @@ public class Employee {
         this.name = name;
     }
 
-    public int getDepartmentNumber() {
-        return departmentNumber;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setDepartmentNumber(int departmentNumber) {
-        this.departmentNumber = departmentNumber;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public static int getCounter() {
-        return counter;
-    }
-
-    public static void setCounter(int counter) {
-        Employee.counter = counter;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 }
