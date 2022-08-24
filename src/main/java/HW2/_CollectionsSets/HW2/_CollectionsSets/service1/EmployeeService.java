@@ -16,12 +16,9 @@ public class EmployeeService {
     public void addEmployee(String firstName, String lastName) {
         Employee emp = new Employee(firstName, lastName);
         if (employees.contains(emp)) {
-            employees.add(emp);
-            if (employees.size() > 10) {
-                throw new EmployeeStorageIsFullException("База переполнена");
-            }
-        } else {
             throw new EmployeeAlreadyAddedException("Сотрудник уже есть в базе");
+        } else {
+            employees.add(emp);
         }
     }
 
