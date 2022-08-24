@@ -1,14 +1,14 @@
-package service1;
+package HW2._CollectionsSets.HW2._CollectionsSets.service1;
 
-import HW2._CollectionsSets.exception.EmployeeAlreadyAddedException;
-import HW2._CollectionsSets.exception.EmployeeNotFoundException;
-import HW2._CollectionsSets.exception.EmployeeStorageIsFullException;
+import HW2._CollectionsSets.HW2._CollectionsSets.service1.exception.EmployeeAlreadyAddedException;
+import HW2._CollectionsSets.HW2._CollectionsSets.service1.exception.EmployeeNotFoundException;
+import HW2._CollectionsSets.HW2._CollectionsSets.service1.exception.EmployeeStorageIsFullException;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.function.Predicate;
 
+@Service
 public class EmployeeService {
 
     List<Employee> employees = new ArrayList<>();
@@ -17,12 +17,15 @@ public class EmployeeService {
         Employee emp = new Employee(firstName, lastName);
         if (employees.contains(emp)) {
             employees.add(emp);
+            if (employees.size() > 10) {
+                throw new EmployeeStorageIsFullException("База переполнена");
+            }
         } else {
             throw new EmployeeAlreadyAddedException("Сотрудник уже есть в базе");
         }
     }
 
-    public void deleteEmployee(String firstName, String lastName) {
+    public void removeEmployee(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
         if (employees.contains(employee)) {
             employees.remove(employee);

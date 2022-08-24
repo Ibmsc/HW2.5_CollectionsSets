@@ -1,6 +1,6 @@
 package HW2._CollectionsSets.HW2._CollectionsSets;
 
-import service1.Employee;
+import HW2._CollectionsSets.HW2._CollectionsSets.service1.Employee;
 
 public class main {
     public static void main(String[] args) {

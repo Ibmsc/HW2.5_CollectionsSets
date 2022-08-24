@@ -1,4 +1,4 @@
-package service1;
+package HW2._CollectionsSets.HW2._CollectionsSets.service1;
 
 import java.util.Objects;
 
